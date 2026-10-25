@@ -14,6 +14,7 @@ WORKDIR $WEBTREES_HOME
 # mariadb-client provides mysqladmin
 RUN apt-get update \
  && apt-get install -y \
+    libbrotli1 \
     curl \
     libmagickwand-dev \
     libpq-dev \
