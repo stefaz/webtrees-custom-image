@@ -37,7 +37,7 @@ jobs:
           pull: true
           push: true
           tags: |
-            ghcr.io/stefaz/webtrees-custom:2.2.6-php8.4.27-h2
+            ghcr.io/stefaz/webtrees-custom:2.2.6-php8.4.27-h3
             ghcr.io/stefaz/webtrees-custom:latest
           labels: |
             org.opencontainers.image.source=https://github.com/stefaz/webtrees-custom-image
