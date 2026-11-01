@@ -34,6 +34,10 @@ RUN pecl install imagick \
  && docker-php-ext-configure gd --with-freetype --with-jpeg \
  && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql zip intl gd exif opcache
 
+# Disable EXR image processing to mitigate OpenEXR vulnerabilities
+RUN sed -i '/<\/policymap>/i\  <policy domain="module" rights="none" pattern="EXR" />' \
+    /etc/ImageMagick-7/policy.xml
+
 # remove old apt stuff
 RUN apt-get purge gcc g++ make -y \
  && apt-get autoremove -y \
