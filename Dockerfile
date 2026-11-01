@@ -13,6 +13,7 @@ WORKDIR $WEBTREES_HOME
 # postgresql-client provides pg_isready
 # mariadb-client provides mysqladmin
 RUN apt-get update \
+ && apt-get upgrade -y \
  && apt-get install -y \
     libbrotli1 \
     curl \
